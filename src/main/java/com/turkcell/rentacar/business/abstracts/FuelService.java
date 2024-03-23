@@ -1,17 +1,23 @@
 package com.turkcell.rentacar.business.abstracts;
 
+import com.turkcell.rentacar.business.dtos.requests.CreateFuelRequest;
+import com.turkcell.rentacar.business.dtos.requests.UpdateFuelRequest;
+import com.turkcell.rentacar.business.dtos.responses.CreatedFuelResponse;
+import com.turkcell.rentacar.business.dtos.responses.DeletedFuelResponse;
+import com.turkcell.rentacar.business.dtos.responses.GotFuelResponse;
+import com.turkcell.rentacar.business.dtos.responses.UpdatedFuelResponse;
 import com.turkcell.rentacar.entities.concretes.Fuel;
 
 import java.util.List;
 
 public interface FuelService {
 
-    Fuel add(Fuel fuel);
+    CreatedFuelResponse add(CreateFuelRequest createFuelRequest);
 
-    Fuel update(int id,Fuel fuel);
+    UpdatedFuelResponse update(int id, UpdateFuelRequest updateFuelRequest);
 
-    List<Fuel> getAll();
+    List<GotFuelResponse> getAll();
 
-    void delete(int id);
+    DeletedFuelResponse delete(int id);
 
 }
